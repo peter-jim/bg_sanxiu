@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>素材库 · AI 动态背景素材</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- Header -->
+<header class="site-header">
+  <div class="header-inner">
+    <a class="logo" href="#">
+      <span class="logo-mark">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 6 L4 18 L8 14 L12 18 L16 12 L20 18 L20 6" stroke="#ffd90a" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
+        </svg>
+      </span>
+      <span class="logo-name">
+        <span class="zh">素材库</span>
+        <span class="en">AI · MOTION · STOCK</span>
+      </span>
+    </a>
+
+    <nav class="nav-tabs" role="tablist">
+      <button class="nav-tab" aria-pressed="true">首页</button>
+      <button class="nav-tab">动态背景</button>
+    </nav>
+
+    <div class="search-wrap">
+      <input id="search" type="text" placeholder="搜索海量素材，如 粒子 / 神经网络 / 网格…" />
+      <div class="s-icon">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+      </div>
+    </div>
+
+    <div class="header-right">
+      <button class="link-btn">成为作者</button>
+      <button class="create-btn">
+        <span class="plus">+</span>
+        创作
+      </button>
+      <div class="avatar">🧊</div>
+    </div>
+  </div>
+</header>
+
+<!-- Hero -->
+<section class="hero">
+  <h1 class="hero-watermark">FOOTAGE LIBRARY</h1>
+  <p class="hero-tagline">开放 <em>AI 动态背景</em> 素材，让视频<em> 自带科技感</em></p>
+</section>
+
+<!-- Showcase -->
+<section class="showcase">
+  <!-- Left: device mockup with live AI animation -->
+  <div class="showcase-visual">
+    <div class="sc-block-pink"></div>
+    <div class="sc-block-yellow"></div>
+
+    <!-- circular badge -->
+    <svg class="circle-badge" viewBox="0 0 132 132" aria-hidden="true">
+      <defs>
+        <path id="circ" d="M66,66 m-50,0 a50,50 0 1,1 100,0 a50,50 0 1,1 -100,0" />
+      </defs>
+      <text>
+        <textPath href="#circ" startOffset="0">PRACTICAL · GOOD LOOKING · AND · MOTION · </textPath>
+      </text>
+      <circle cx="66" cy="14" r="5" class="badge-dot"/>
+    </svg>
+
+    <div class="device">
+      <div class="device-screen">
+        <canvas id="showcase-canvas"></canvas>
+        <div class="hud">
+          <div class="h-btn"><svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg></div>
+          <div class="h-btn"><svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg></div>
+        </div>
+      </div>
+      <div class="device-bar">
+        <div class="b-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg></div>
+        <div class="progress"></div>
+        <div class="b-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 8h16M4 12h12M4 16h8"/></svg></div>
+        <div class="b-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19 12a7 7 0 11-14 0 7 7 0 0114 0z"/></svg></div>
+        <div class="b-icon"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg></div>
+      </div>
+    </div>
+
+    <!-- floating stickers -->
+    <div class="sticker rotate-l" style="bottom: -4%; left: 6%;">
+      <svg width="76" height="76" viewBox="0 0 80 80">
+        <circle cx="40" cy="40" r="36" fill="#fad8d6"/>
+        <text x="40" y="46" font-family="JetBrains Mono" font-size="13" font-weight="700" text-anchor="middle" fill="#111">MP4</text>
+      </svg>
+    </div>
+    <div class="sticker rotate-r" style="top: 4%; right: -2%;">
+      <svg width="84" height="48" viewBox="0 0 84 48">
+        <rect x="2" y="2" width="80" height="44" rx="22" fill="#ffd90a" stroke="#111" stroke-width="2"/>
+        <text x="42" y="30" font-family="JetBrains Mono" font-size="12" font-weight="800" text-anchor="middle" fill="#111">4K · 60FPS</text>
+      </svg>
+    </div>
+  </div>
+
+  <!-- Right: headline + cta -->
+  <div class="showcase-text">
+    <p class="sc-wm-side">DARK<br>MOTION</p>
+    <h2 class="sc-headline">黑色动态背景<br><em>专为 AI 内容</em>而生</h2>
+    <p class="sc-sub">粒子、神经网络、矩阵雨、电路板、等距/蜂窝/扭曲网格、雷达扫描… Canvas 实时渲染，任选画幅与分辨率，下载即用。剪映、达芬奇、Premiere 都能直接拖入。</p>
+    <button class="btn-primary" id="cta-browse">
+      浏览全部素材
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+    </button>
+  </div>
+</section>
+
+<!-- Templates section -->
+<section class="section" id="templates">
+  <div class="section-head">
+    <div>
+      <div class="section-eyebrow">MOTION TEMPLATES · 模板</div>
+      <h2 class="section-title">14 套<em>动态模板</em>，开箱即用</h2>
+    </div>
+    <div class="section-meta">
+      <span><strong>14</strong> Templates</span>
+      <span>·</span>
+      <span>Up to <strong>4K · 60fps</strong></span>
+      <span>·</span>
+      <span><strong>CC0</strong> License</span>
+    </div>
+  </div>
+
+  <div class="toolbar">
+    <div class="chip-group" id="chips"></div>
+    <div class="right">
+      <select class="sort-select" id="sort">
+        <option>排序 · 推荐</option>
+        <option>最新上架</option>
+        <option>下载最多</option>
+        <option>时长 ↑</option>
+      </select>
+    </div>
+  </div>
+</section>
+
+<!-- Grid -->
+<main class="grid-wrap">
+  <div class="grid" id="grid"></div>
+</main>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="mark">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none">
+      <path d="M4 6 L4 18 L8 14 L12 18 L16 12 L20 18 L20 6" stroke="#111" stroke-width="2.4" stroke-linejoin="round" stroke-linecap="round" fill="none"/>
+    </svg>
+    © 2026 素材库 · CC0 无需署名
+  </div>
+  <div>
+    <a href="#">关于</a>
+    <a href="#">API</a>
+    <a href="#">使用条款</a>
+    <a href="#">联系</a>
+  </div>
+</footer>
+
+<!-- Sidebar preview -->
+<div class="sidebar-scrim" id="sidebar-scrim"></div>
+<aside class="sidebar" id="sidebar" role="dialog" aria-label="Template preview">
+  <div class="sb-head">
+    <div class="tmpl-id" id="sb-tmpl-id">TPL-001</div>
+    <button class="sb-close" id="sb-close" title="关闭">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M18 6L6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+  <div class="sb-preview">
+    <div class="sb-preview-frame">
+      <canvas class="sb-canvas" id="sb-canvas"></canvas>
+      <div class="sb-preview-overlay">
+        <div class="timecode" id="sb-timecode">00:00 / 10:00</div>
+        <div class="rec"><span class="rec-dot"></span>LIVE</div>
+      </div>
+    </div>
+  </div>
+  <div class="sb-body">
+    <div>
+      <h2 class="sb-title" id="sb-title">粒子网络<span class="en">Particle Network</span></h2>
+      <p class="sb-desc" id="sb-desc"></p>
+    </div>
+
+    <div>
+      <div class="sb-section-label">规格 · SPECS</div>
+      <div class="specs">
+        <div class="spec"><span class="k">分辨率 RES</span><span class="v" id="sb-spec-res">1920 × 1080</span></div>
+        <div class="spec"><span class="k">时长 DUR</span><span class="v" id="sb-spec-dur">10.00 s</span></div>
+        <div class="spec"><span class="k">帧率 FPS</span><span class="v" id="sb-spec-fps">60 fps</span></div>
+        <div class="spec"><span class="k">大小 SIZE</span><span class="v" id="sb-spec-size">— MB</span></div>
+        <div class="spec"><span class="k">格式 FMT</span><span class="v" id="sb-spec-fmt">MP4 · 16:9</span></div>
+        <div class="spec"><span class="k">编码 CODEC</span><span class="v" id="sb-spec-codec">WebM · VP9</span></div>
+      </div>
+    </div>
+
+    <div>
+      <div class="sb-section-label">画幅 · ASPECT</div>
+      <div class="ratio-grid">
+        <button class="ratio-card" data-group="sb-ratio" data-val="16:9" aria-pressed="true">
+          <div class="ratio-vis"><div class="ratio-box r-16-9"></div></div>
+          <div class="ratio-meta"><span class="ratio-num">16:9</span><span class="ratio-use">横屏 · YouTube/B站</span></div>
+        </button>
+        <button class="ratio-card" data-group="sb-ratio" data-val="9:16">
+          <div class="ratio-vis"><div class="ratio-box r-9-16"></div></div>
+          <div class="ratio-meta"><span class="ratio-num">9:16</span><span class="ratio-use">竖屏 · 抖音/视频号</span></div>
+        </button>
+        <button class="ratio-card" data-group="sb-ratio" data-val="1:1">
+          <div class="ratio-vis"><div class="ratio-box r-1-1"></div></div>
+          <div class="ratio-meta"><span class="ratio-num">1:1</span><span class="ratio-use">方形 · IG/朋友圈</span></div>
+        </button>
+        <button class="ratio-card" data-group="sb-ratio" data-val="4:3">
+          <div class="ratio-vis"><div class="ratio-box r-4-3"></div></div>
+          <div class="ratio-meta"><span class="ratio-num">4:3</span><span class="ratio-use">经典 · PPT/电视</span></div>
+        </button>
+        <button class="ratio-card" data-group="sb-ratio" data-val="3:4">
+          <div class="ratio-vis"><div class="ratio-box r-3-4"></div></div>
+          <div class="ratio-meta"><span class="ratio-num">3:4</span><span class="ratio-use">竖图 · 小红书</span></div>
+        </button>
+        <button class="ratio-card" data-group="sb-ratio" data-val="21:9">
+          <div class="ratio-vis"><div class="ratio-box r-21-9"></div></div>
+          <div class="ratio-meta"><span class="ratio-num">21:9</span><span class="ratio-use">超宽 · 院线/Banner</span></div>
+        </button>
+      </div>
+    </div>
+
+    <div>
+      <div class="sb-section-label">分辨率 · RESOLUTION</div>
+      <div class="opt-row" id="sb-res-row">
+        <button class="opt" data-group="sb-res" data-val="sd">SD · 720</button>
+        <button class="opt" data-group="sb-res" data-val="hd" aria-pressed="true">HD · 1080</button>
+        <button class="opt" data-group="sb-res" data-val="4k">UHD · 4K</button>
+      </div>
+    </div>
+
+    <div>
+      <div class="sb-section-label">时长 · DURATION</div>
+      <div class="opt-row">
+        <button class="opt" data-group="sb-dur" data-val="5">5s</button>
+        <button class="opt" data-group="sb-dur" data-val="10" aria-pressed="true">10s</button>
+        <button class="opt" data-group="sb-dur" data-val="15">15s</button>
+        <button class="opt" data-group="sb-dur" data-val="30">30s</button>
+        <button class="opt" data-group="sb-dur" data-val="60">60s</button>
+      </div>
+    </div>
+
+    <div>
+      <div class="dl-row">
+        <button class="btn primary" id="sb-download">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span class="lbl">下载 MP4</span>
+        </button>
+        <button class="btn ghost" id="sb-copylink" title="复制链接">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M10 13a5 5 0 007.54.54l3-3a5 5 0 00-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 00-7.54-.54l-3 3a5 5 0 007.07 7.07l1.71-1.71"/></svg>
+        </button>
+      </div>
+      <div class="dl-progress" id="sb-dl-progress"><div class="dl-progress-bar" id="sb-dl-progress-bar"></div></div>
+      <div class="dl-hint" id="sb-dl-hint"></div>
+    </div>
+
+    <div>
+      <div class="sb-section-label">相关 · RELATED</div>
+      <div class="related" id="sb-related"></div>
+    </div>
+  </div>
+</aside>
+
+<!-- Tweaks panel -->
+<div class="tweaks-panel" id="tweaks"></div>
+
+<!-- Toast -->
+<div class="toast" id="toast">
+  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><polyline points="20 6 9 17 4 12"/></svg>
+  <span class="msg">下载完成</span>
+</div>
+
+<script src="animations.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
