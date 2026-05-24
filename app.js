@@ -199,6 +199,20 @@ const TEMPLATES = [
     fmt: "MP4 · H.264",
     tag: "Cyan",
   },
+  {
+    id: "finegrid",
+    code: "TPL-015",
+    nameZh: "细网格上移",
+    nameEn: "Fine Grid Scroll",
+    category: "极简",
+    color: "#6ee7ff",
+    color2: "#6ee7ff",
+    span: "s-wide",
+    desc: "极细网格线缓慢向上滚动，深色底 + 微光交点；极简科技感衬底，适合人物讲解、产品介绍、演示文稿背景。",
+    duration: 15,
+    fmt: "MP4 · H.264",
+    tag: "Minimal",
+  },
 ];
 
 // Approximate filesize from duration + total pixels
@@ -586,7 +600,7 @@ function showToast(msg) {
 // ============================================================
 // Filter chips / search / sort
 // ============================================================
-const CATEGORIES = ["all", "粒子", "数据流", "网格", "波形", "流体", "故障"];
+const CATEGORIES = ["all", "粒子", "数据流", "网格", "波形", "流体", "故障", "极简"];
 const chipBar = document.getElementById("chips");
 CATEGORIES.forEach((c, i) => {
   const btn = document.createElement("button");
@@ -601,6 +615,7 @@ CATEGORIES.forEach((c, i) => {
     "波形": "波形 Waveform",
     "流体": "流体 Plasma",
     "故障": "故障 Glitch",
+    "极简": "极简 Minimal",
   };
   btn.textContent = labels[c];
   chipBar.appendChild(btn);

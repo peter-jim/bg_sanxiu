@@ -1054,6 +1054,75 @@ class VoxelGrid extends BaseAnim {
   }
 }
 
+// ============================================================
+// 15) Fine Grid Scroll — thin grid slowly drifting upward
+// ============================================================
+class FineGridScroll extends BaseAnim {
+  init() {
+    this.color = this.opts.color ?? "#6ee7ff";
+    this.t = 0;
+    this.cellSize = 32; // base cell size before dpr
+  }
+  render() {
+    this.clear();
+    const ctx = this.ctx;
+    const w = this.w, h = this.h;
+    this.t += 0.3; // scroll speed (pixels per frame at 1x dpr)
+    const cell = this.cellSize * this.dpr;
+    // vertical scroll offset — wraps every cell height
+    const offsetY = this.t * this.dpr % cell;
+
+    // === grid lines ===
+    ctx.lineWidth = 0.5 * this.dpr;
+
+    // horizontal lines (these scroll upward)
+    for (let y = -cell + offsetY; y <= h + cell; y += cell) {
+      // fade at top and bottom edges for seamless loop feel
+      const ny = y / h;
+      const edgeFade = Math.min(1, ny * 5, (1 - ny) * 5);
+      const alpha = 0.12 * Math.max(0, edgeFade);
+      ctx.strokeStyle = hexA(this.color, alpha);
+      ctx.beginPath();
+      ctx.moveTo(0, y);
+      ctx.lineTo(w, y);
+      ctx.stroke();
+    }
+
+    // vertical lines (static — only horizontal motion is scroll up)
+    for (let x = 0; x <= w; x += cell) {
+      const nx = x / w;
+      const edgeFade = Math.min(1, nx * 5, (1 - nx) * 5);
+      const alpha = 0.12 * Math.max(0, edgeFade);
+      ctx.strokeStyle = hexA(this.color, alpha);
+      ctx.beginPath();
+      ctx.moveTo(x, 0);
+      ctx.lineTo(x, h);
+      ctx.stroke();
+    }
+
+    // === intersection dots (subtle) ===
+    const dotR = 0.8 * this.dpr;
+    for (let x = 0; x <= w; x += cell) {
+      for (let y = -cell + offsetY; y <= h + cell; y += cell) {
+        const ny = y / h;
+        const nx = x / w;
+        const edgeFade = Math.min(1, ny * 5, (1 - ny) * 5, nx * 5, (1 - nx) * 5);
+        if (edgeFade <= 0) continue;
+        ctx.fillStyle = hexA(this.color, 0.18 * edgeFade);
+        ctx.fillRect(x - dotR, y - dotR, dotR * 2, dotR * 2);
+      }
+    }
+
+    // === subtle center vignette to add depth ===
+    const vg = ctx.createRadialGradient(w / 2, h / 2, 0, w / 2, h / 2, Math.hypot(w, h) * 0.55);
+    vg.addColorStop(0, hexA(this.color, 0.03));
+    vg.addColorStop(0.4, hexA(this.color, 0.015));
+    vg.addColorStop(1, "rgba(0,0,0,0)");
+    ctx.fillStyle = vg;
+    ctx.fillRect(0, 0, w, h);
+  }
+}
+
 // ===== Utilities =====================================================
 function hexA(hex, a) {
   // accepts #rrggbb
@@ -1085,4 +1154,5 @@ window.ANIM_REGISTRY = {
   hex:         HexGrid,
   warp:        WarpedGrid,
   voxel:       VoxelGrid,
+  finegrid:    FineGridScroll,
 };
